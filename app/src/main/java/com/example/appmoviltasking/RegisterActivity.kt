@@ -61,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         tvBackToLogin.setOnClickListener {
-            finish() // This will close the RegisterActivity and return to MainActivity
+            finish()
         }
 
         val textWatcher = object : TextWatcher {
@@ -92,9 +92,7 @@ class RegisterActivity : AppCompatActivity() {
         val password = etPassword.text.toString()
 
         if (validateInputs(username, dni, email, password)) {
-            // Here you would typically implement the logic to register the user in your database or service
             Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show()
-            // After successful registration, you might want to redirect the user to the login screen or main activity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -105,22 +103,22 @@ class RegisterActivity : AppCompatActivity() {
         var isValid = true
 
         if (username.isEmpty()) {
-            tilUsername.error = "Username is required"
+            tilUsername.error = "El Nombre de Usuario es obligatorio"
             isValid = false
         }
 
         if (dni.isEmpty()) {
-            tilDNI.error = "National ID is required"
+            tilDNI.error = "El DNI es obligatorio"
             isValid = false
         }
 
         if (email.isEmpty()) {
-            tilEmail.error = "Email is required"
+            tilEmail.error = "El Email es obligatorio"
             isValid = false
         }
 
         if (password.isEmpty()) {
-            tilPassword.error = "Password is required"
+            tilPassword.error = "La Contraseña es obligatoria"
             isValid = false
         }
 
