@@ -78,19 +78,17 @@ class MainActivity : AppCompatActivity() {
         var isValid = true
 
         if (username.isEmpty()) {
-            tilUsername.error = "Username is required"
+            tilUsername.error = "El Nombre de Usuario es obligatorio"
             isValid = false
         }
 
         if (password.isEmpty()) {
-            tilPassword.error = "Password is required"
+            tilPassword.error = "La Contraseña es obligatoria"
             isValid = false
         }
 
         if (isValid) {
-            // Here you would typically validate the credentials against a backend service
-            // For this example, we'll just show a toast message
-            Toast.makeText(this, "Welcome to TodoListPeruvian!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "¡Bienvenidos a Tasking!", Toast.LENGTH_SHORT).show()
         }
     }
 
